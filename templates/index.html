@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Real-Time Text Emotion Detection</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <!-- Floating Emotion Icons -->
+    <div class="bg-icons">
+      <span>😊</span>
+      <span>😢</span>
+      <span>😡</span>
+      <span>😨</span>
+      <span>😐</span>
+      <span>💭</span>
+    </div>
+
+    <div class="app-card">
+      <!-- Emotion Icon -->
+      <div class="emotion-icon">😊</div>
+
+      <!-- Emotion Wave -->
+      <div class="wave-container">
+        <svg viewBox="0 0 600 100" class="wave">
+          <line x1="0" y1="50" x2="600" y2="50" class="wave-base" />
+          <polyline
+            points="0,50 80,50 100,20 120,80 140,50
+                        200,50 230,30 260,70 290,50 600,50"
+            class="wave-line"
+          />
+        </svg>
+      </div>
+
+      <h1>😊 Real-Time Text Emotion Detection</h1>
+      <p class="subtitle">AI-powered analysis of emotions expressed in text</p>
+
+      <textarea
+        id="textInput"
+        placeholder="Type your thoughts or feelings here..."
+        oninput="countChars()"
+        required
+      ></textarea>
+
+      <div class="controls">
+        <span id="charCount">0 characters</span>
+        <div>
+          <button class="analyze-btn" onclick="analyzeEmotion()">
+            Analyze
+          </button>
+          <button class="clear-btn" onclick="clearText()">Clear</button>
+        </div>
+      </div>
+
+      <div id="result"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
